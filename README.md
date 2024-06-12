@@ -34,3 +34,18 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+# Steps
+
+## 0. Project Setup
+
+1. in your terminal, run `npx create-next-app@latest` as it says in https://nextjs.org/
+2. run `npm run dev`
+3. delete `favicon.ico` in the `app` folder
+4. clear the styles in `app\globals.css`
+5. set the metadata in `app\layout.tsx`
+6. in `app\page.tsx`, delete everything with the `return` of this page, and instead set some basic markup & Tailwind CSS classes
+7. install `Tailwind CSS IntelliSense` & `ES7+`
+8. customize your Tailwing CSS config by reffering your Figma design https://resource.jsmastery.pro/minimal-portfolio
+9. in `tailwind.config.ts`, add your first custom color by extending your actual theme
+10. go back to `app\page.tsx` & refer to that customized color
