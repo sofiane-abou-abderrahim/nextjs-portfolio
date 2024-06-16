@@ -242,3 +242,37 @@ Build a top title, a primary title, a subtitle & the call to action button to sh
             - make the button work when clicking & set the gradient as a background
               - in `components\ui\MagicButton.tsx`, add a `onClick` prop that points at this `handleClick` function
               - back to `components\ui\GradientBg.tsx`, replace `h-screen w-screen relative` with `h-full w-full absolute`
+
+## 3. Recent Projects
+
+This section on your list will be what your portfolio is all about
+which is displaying the recent projects you worked on
+using this very engaging card that folds back and allows you to visit the live website that you're seeing on the screen
+This is a very cool effect, so let's go ahead and implement it now
+
+1. create a new section called "Recent Projects"
+   1. under `components`, create a new `RecentProjects.tsx` file
+   2. run `racfe` to create a `RecentProjects` component
+   3. in `app\page.tsx`, output the `<RecentProjects />` component
+2. in `data\index.ts`, customize the `projects` array to really make it your projects
+3. customize `RecentProjects.tsx`
+   1. set a `h1` heading
+   2. render a list of your projects by adding `import { projects } from '@/data';` & mapping the `projects`
+   3. output another Aceternity UI component `3D Animated Pin` which will pin on these project cards
+      - go to https://ui.aceternity.com/ & search for "3D Pin"
+      - you'll get redirected to https://ui.aceternity.com/components/3d-pin
+      - under `Copy the source code` for `components/ui/3d-pin.tsx`, copy the code below
+      - then in `components/ui`, add a new `3d-pin.tsx` file & paste the code you just copied in there
+      - go back to `components\RecentProjects.tsx` & use this `<PinContainer>` component
+      - go to `components\ui\3d-pin.tsx` to customize this `<PinContainer>`
+      - back to `components\RecentProjects.tsx`, customize this `<PinContainer>` component by
+        - passing some props to it
+        - adding a children inside of it for the `title`, the `description` & the `bottom` of the cards
+4. implement the links of the floating navbar so that the user can scroll down to the projects section
+   1. go back to the original home page `app\page.tsx`
+      - remove the array in the `<FloatingNav>` component
+      - use the constant `{navItems}` coming `from '@/data'`
+   2. go to `components\ui\FloatingNav.tsx`
+      - remove the `Login` button
+      - modify some CSS classes to customize the styles of the navbar
+   3. in `components\RecentProjects.tsx`, make the `Projects` navbar link point to the "Projects" section by adding `id="projects"`
