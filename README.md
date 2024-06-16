@@ -145,3 +145,100 @@ Build a top title, a primary title, a subtitle & the call to action button to sh
     4. within the `ui` folder, create a new component called `FloatingNav.tsx`
     5. paste in there the code you just copied
     6. go to `app\page.tsx` & output the `<FloatingNav />` component & pass to it the `navItems` prop like it says in the docs under "Props"
+
+## 2. Bento Grid
+
+1. in the `components` folder, add a new `Grid.tsx` component
+   1. in there, use the `rafce` shortcut
+   2. in `app\page.tsx`, import that `<Grid />` component
+2. use another Aceternity component called "Bento Grid"
+   1. got to https://ui.aceternity.com/ & search for "Bento Grid"
+   2. you'll get redirected to https://ui.aceternity.com/components/bento-grid
+   3. copy the source code related to `components/ui/bento-grid.tsx`
+   4. in the `ui` folder, creater a new component called `BentoGrid.tsx`
+   5. in there, paste the code you just copied
+   6. in `components\Grid.tsx`, import the 2 `<BentoGrid>` & `<BentoGridItem>` components available in `components\ui\BentoGrid.tsx`
+   - inside `<BentoGrid>`, render an array in which you add an object with a `title` & a `description` & an `id` field
+   - map this array & return in it the `<BentoGridItem>` component
+   - add to this `<BentoGridItem>` the required couple of props according to the docs under "Props"
+   7. to render the grid according to your design, modify the content of the `BentoGridItem` component in `components\ui\BentoGrid.tsx`
+   - modify some CSS classes
+   - accept the `id` prop
+3. outsource the data in a different folder & component to render different grid items in a more optimized way
+   1. within the root folder, create a new `data` folder & inside of it, create a new `index.ts` file
+   2. in there, declare the array of grid item by cutting it from `components\Grid.tsx` & storing it in a `gridItems` constant
+   3. back in `components\Grid.tsx`, import the `gridItems` constant & map it like you did before
+4. since your project will contain a lot of data, so to save you some time
+   1. go to the `README.md` of the original project https://github.com/adrianhajdin/portfolio/blob/main/README.md
+   2. click on `Code to Copy` to reach out to this page https://github.com/adrianhajdin/portfolio/blob/main/README.md#snippets
+   3. then go to `data/index.ts` & copy the code & paste in your `data\index.ts` file
+   4. then, under `Assets`, click on `here` to download the `public` folder
+   5. delete your `public` folder & replace it with the new downloaded one
+5. following the step 2, customize the bento grid items & make them as nice as the Figma design
+   1. in `components\Grid.tsx`, add some more props to the `<BentoGridItem>`
+   2. in `components\ui\BentoGrid.tsx`, accept those props nicely in the `BentoGridItem` component so that you can put them to use
+   3. properly style this `BentoGridItem` according to those props so that the cards look nice
+      1. add a new `style` attribute with some `background` color & `backgroundColor` gradient provided from https://github.com/adrianhajdin/portfolio/blob/main/README.md#snippets under `Linear Gradient`
+      2. below it, create a new `<div>` & inside of it add
+         - an inner `<div>` with some CSS classes & an `<img />` in it
+         - another `<div>` for the secondary image
+         - another `<div>` only for the sixth item to render an animation called `Background Gradient Animation` from Aceternity UI
+           - go to https://ui.aceternity.com/ & search for "Gradient Animation"
+           - you'll get redirected to https://ui.aceternity.com/components/background-gradient-animation
+           - copy the source code for `components/ui/background-gradient-animation.tsx`
+           - in the `ui` folder, add a new `GradientBg.tsx` file & paste the code you just copied in there
+           - use this `<BackgroundGradientAnimation>` component in this inner `<div>`
+           - and between this component, render a self closing `<div>` with some CSS classes
+           - in `components\ui\GradientBg.tsx`, properly import `{cn}`
+         - another `<div>` with some CSS classes & another `div` with some CSS classes & inside of it some `{description}`
+         - right below it, render your `{title}` with some CSS classes
+      3. all of those grid items have to have some unique design, so add these special elements for each one of the cards
+         1. start with this `three-globe`, which would be another Aceternity component, for the second card
+            - go to https://ui.aceternity.com/ & search for "GitHub Globe"
+            - you will be redirected to https://ui.aceternity.com/components/github-globe
+            - copy the source code for `components/ui/globe.tsx`
+            - in the `ui` folder, create a new `Globe.tsx` file & paste in there the code you just copied
+            - in your terminal, install all the required packages & files from this code
+              1. add the `data/globe.json` file
+                 - go to https://ui.aceternity.com/components/github-globe, under `Copy the globe json` & click on `Download the globe.json file from this URL`
+                 - you'll be redirected to https://gist.github.com/manuarora700/4f03b7767a9431f2589c14c47377328a
+                 - click on the little icon to "display the source blob"
+                 - you'll be redirected to https://gist.github.com/manuarora700/4f03b7767a9431f2589c14c47377328a?short_path=7ed1be6
+                 - from there, go to the "raw file" & copy the code
+                 - in the `data` folder, create a new `globe.json` file & paste the code you just copied in there
+              2. install Globe dependencies
+                 - go to https://ui.aceternity.com/components/github-globe, under `Install Globe dependencies` & copy the command
+                 - in your terminal, paste that command
+            - go to `components\ui\BentoGrid.tsx`, below the `<div>` that wraps the `description` & the `title`
+              1. use `<GridGlobe>` component imported `from './GridGlobe'` for the second grid item card
+              2. check the requiered props in the docs in the "Props" section https://ui.aceternity.com/components/github-globe
+              3. at the top of this page, click on `Code` to switch over the code & copy the code
+              4. in the `ui` folder, add a new `GridGlobe.tsx` file which would be the representation of the `Globe` component within the grid
+              5. in there, paste the code you just copied which contain the code for the `globeConfig` prop we need & import the `Globe` from `'./Globe'`
+              6. go to `components\ui\GridGlobe.tsx`, in the `GridGlobe()` function component to customize it as we want it by cleaning it
+              7. go back to `components\ui\BentoGrid.tsx`, fix the styles of the container to make the globe not jump out of the card which matters a lot for all these elements of each one of the cards
+         2. focus on the fourth card, the `id 3`, which would be the Tech Stack list
+            - in `components\ui\BentoGrid.tsx`, below where you rendered the second card, add a `<div>` with some CSS classes
+            - inside of it, render the Tech text in another `<div>` with some CSS classes
+            - inside of it, create an array of left side items & map over it & give it a key & some CSS classes & render each item in a `<span>`
+            - below this left side maping, create another `<span>` with some CSS classes for the empty list item with a background color
+            - duplicate the `<div>` containing this left list & paste it below it & change some of the tech & move the `<span>` for the empty list item above the mapped list
+         3. customize the card with the `id 6`, which is the one with the gradient in which the user will be able to copy your email
+            - below the content for the `id 3`, add some dynamic content & an outer & inner `<div>` with some CSS classes
+            - inside this inner `<div>`, render a lottie animation
+              - by installing the `react-lottie` package & also installing its types by running `npm i --save-dev @types/react-lottie`
+              - in this inner `<div>`, output the `<Lottie />` component & give it some `options` prop which contains an object of
+                - `loop` property, which is going to loop only when we copy the email, so create a `copied` state because you need to have access to the state of copied & set this field to `copied`
+                - `autoplay` which also has a `copied` value
+                - `animationData` with a value of `animationData` which would be another JSON object to add to your `data` folder
+                  - so, in the `data` folder, create a new `confetti.json` file
+                  - go to https://github.com/adrianhajdin/portfolio/blob/main/data/confetti.json & copy the code
+                  - paste it in the newly added file
+                - `rendererSettings` object, which you can add to it a special `preserveAspectRatio` with a value of `'xMidYMid slice'`
+            - make it a `'use client'` component, because you used a `useState()`
+            - below the Lottie animation, add a `<MagicButton>` to trigger the animation
+              - pass some props to it & a `handleClick` prop which trigger a `handleCopy` function
+              - declare the `handleCopy()` function
+            - make the button work when clicking & set the gradient as a background
+              - in `components\ui\MagicButton.tsx`, add a `onClick` prop that points at this `handleClick` function
+              - back to `components\ui\GradientBg.tsx`, replace `h-screen w-screen relative` with `h-full w-full absolute`
