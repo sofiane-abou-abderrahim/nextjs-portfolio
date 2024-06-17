@@ -276,3 +276,35 @@ This is a very cool effect, so let's go ahead and implement it now
       - remove the `Login` button
       - modify some CSS classes to customize the styles of the navbar
    3. in `components\RecentProjects.tsx`, make the `Projects` navbar link point to the "Projects" section by adding `id="projects"`
+
+## 4. Sentry
+
+With this many features completed on your developer portfolio, it's important to ensure a smooth user experience, optimized
+performance and just in general showcasing that you're using all the best practices of developing applications.
+
+- For that reason, let's use Sentry, an Enterprise level application Sentry monitoring software that allows you to fix your portfolio very quickly if it breaks.
+- And specifically in this case, let's also enable your users to share when they experience something unexpected with the site.
+  So, for that, you'll integrate a "Report a Bug" model that will allow them to provide you direct feedback.
+
+So, let's get started with integrating Sentry
+
+1.  go to https://sentry.io/welcome/
+2.  create a new account with your GitHub account
+3.  click `Install Sentry`
+4.  choose `Next.js` as your framework
+5.  click `Configure SDK`
+6.  copy the command & paste it in your terminal to install the Sentry wizard
+    - copy the provided `SENTRY_AUTH_TOKEN`
+    - in your project root directory, create a new `.env.local` file & paste the provided token in there
+7.  click `Connect to my central instance` or `View Issues` to get redirected to `https://<your-project>.sentry.io/issues/` & see the `Issues`
+8.  in your project, a `sentry-example-page` folder with a `page.jsx` file are created
+    - copy `sentry-example-page` & paste it to your site URL, like this http://localhost:3000/sentry-example-page
+    - click `Throw Error`
+9.  you should be able to see this error in your `Issues` dashboard in sentry.io
+10. click on this `Error` to analyze it
+11. you can use a lot features, like `Queries`, `Requests`, `Web Vitals`, and especially in this case, `User Feedback`
+    - click `User Feedback`
+    - click `Set Up Now`
+    - if you haven't install the sentry wizard, copy the command & back to your terminal, paste this command
+    - add the special integration called `Sentry.feedbackIntegration` in the `sentry.client.config.js` file within your code & set the `colorScheme` to `dark`
+    - go back to http://localhost:3000/ & refresh the page to see the `Report a Bug` button
