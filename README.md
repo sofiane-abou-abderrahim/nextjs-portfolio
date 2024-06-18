@@ -324,3 +324,19 @@ So, let's get started with integrating Sentry
      - go to `components\ui\InfiniteMovingCards.tsx` & style those cards to your liking
      - go back to `components\Clients.tsx` & add a div to wrap the companies
 2. go to `app\page.tsx` & output `<Clients />`
+
+## 6. Work Experience
+
+1. under `components`, create a new `Experience.tsx` file & in there
+   - run `rafce`
+   - add your customized content
+     - `<h1>`
+     - cards with a `<Button>` provided by Aceternity UI
+       - go to https://ui.aceternity.com/ & search for `Moving Border`
+       - you'll get redirected to https://ui.aceternity.com/components/moving-border
+       - copy the source code for `components/ui/moving-border.tsx`
+       - in `components/ui`, create a new `MovingBorders.tsx` file
+       - paste the code you just copied in there
+       - go back to `components\Experience.tsx` & use the `<Button>`component imported from
+2. go to `components\ui\MovingBorders.tsx` & style the `Button()` component
+3. go to `app\page.tsx` & output `<Experience />`
