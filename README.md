@@ -308,3 +308,19 @@ So, let's get started with integrating Sentry
     - if you haven't install the sentry wizard, copy the command & back to your terminal, paste this command
     - add the special integration called `Sentry.feedbackIntegration` in the `sentry.client.config.js` file within your code & set the `colorScheme` to `dark`
     - go back to http://localhost:3000/ & refresh the page to see the `Report a Bug` button
+
+## 5. Testimonials
+
+1. under `components`, create a new `Clients.tsx` file & run `rafce` & add your customized content
+   - `<h1>`
+   - cards provided from Aceternity UI
+     - go to https://ui.aceternity.com/ & search for `Infinite Moving Cards`
+     - you'll get redirected to https://ui.aceternity.com/components/infinite-moving-cards
+     - Copy the source code for `components/ui/infinite-moving-cards.tsx`
+     - in `components/ui`, create a new `InfiniteMovingCards.tsx`
+     - paste the code you just copied in there
+     - at the top of this file, fix the path for the `{ cn }` import
+     - in `components\Clients.tsx`, output the `<InfiniteMovingCards />` component & set to it all the required props
+     - go to `components\ui\InfiniteMovingCards.tsx` & style those cards to your liking
+     - go back to `components\Clients.tsx` & add a div to wrap the companies
+2. go to `app\page.tsx` & output `<Clients />`
