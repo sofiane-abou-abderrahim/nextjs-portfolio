@@ -340,3 +340,23 @@ So, let's get started with integrating Sentry
        - go back to `components\Experience.tsx` & use the `<Button>`component imported from
 2. go to `components\ui\MovingBorders.tsx` & style the `Button()` component
 3. go to `app\page.tsx` & output `<Experience />`
+
+## 7. My Approach Section
+
+1. under `components`, create a new `Approach.tsx` file
+   - in there, run `rafce`
+   - customize your content
+     - go to https://ui.aceternity.com/ & search for `Canvas Reveal Effect`
+     - you'll get redirected to https://ui.aceternity.com/components/canvas-reveal-effect
+     - copy the source code for `components/ui/canvas-reveal-effect.tsx`
+     - under `components/ui`, create a new `CanvasRevealEffect.tsx` file
+     - in there, paste the code you just copied
+     - go back to https://ui.aceternity.com/components/canvas-reveal-effect & click on `Code` & copy the code
+2. go to `components\Approach.tsx`
+   - paste the code you just copied
+   - replace `CanvasRevealEffectDemo()` with `Approach`
+   - update the path for the `{ CanvasRevealEffect }` import
+   - modify the data & the look & feel of these cards
+     - update the `AceternityIcon` function & return a Magic Button from Aceternity UI
+     - update the `Card` function
+3. go to `app\page.tsx` & output `<Approach />`
