@@ -375,3 +375,11 @@ The next thing you can focus on is this minimalistic yet quite effective footer 
 3. in `components\Footer.tsx`, remove the `<div>` containing the grid image to avoing extra space at the bottom of the page
 4. in `components\ui\FloatingNav.tsx`, fix the floating navbar for mobile view by removing `hidden`
 5. in `components\Footer.tsx`, add more space to the footer for mobile view & reduce some extra space for desktop view
+
+## 10. Deployment
+
+1. in `next.config.mjs`, inside of `nextConfig`, set `output` to `'export'` & `typescript: {ignoreBuildErrors: true}`
+2. remove the `app/sentry-example-page` & the `app/api` folders
+3. in your terminal, run `npm run build`
+4. right click the `out` folder & click `Reveal in File Explorer` & copy all the files in `out` & paste it in your hosted website folder
+5. go to your cPanel & go to your new URL

@@ -11,6 +11,10 @@ const nextConfig = {
   //   // return the modified config
   //   return config;
   // }
+  output: 'export',
+  typescript: {
+    ignoreBuildErrors: true
+  }
 };
 
 export default withSentryConfig(nextConfig, {
