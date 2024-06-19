@@ -360,3 +360,10 @@ So, let's get started with integrating Sentry
      - update the `AceternityIcon` function & return a Magic Button from Aceternity UI
      - update the `Card` function
 3. go to `app\page.tsx` & output `<Approach />`
+
+## 8. Footer
+
+The next thing you can focus on is this minimalistic yet quite effective footer so let's do it next
+
+1. in `components`, create a new `Footer.tsx` file
+2. in `app\page.tsx`, output `<Footer />`
