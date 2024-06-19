@@ -367,3 +367,11 @@ The next thing you can focus on is this minimalistic yet quite effective footer 
 
 1. in `components`, create a new `Footer.tsx` file
 2. in `app\page.tsx`, output `<Footer />`
+
+## 9. Fixing Bugs
+
+1. in `app\page.tsx`, remove `overflow-hidden` so that the page is not cut off when scrolling back up after clicking the nav buttons
+2. instead add `overflow-clip` to remove this extra horizontal scroll that appeared
+3. in `components\Footer.tsx`, remove the `<div>` containing the grid image to avoing extra space at the bottom of the page
+4. in `components\ui\FloatingNav.tsx`, fix the floating navbar for mobile view by removing `hidden`
+5. in `components\Footer.tsx`, add more space to the footer for mobile view & reduce some extra space for desktop view
